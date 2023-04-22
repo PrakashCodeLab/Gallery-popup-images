@@ -1,0 +1,156 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+*:focus{
+    outline: none;
+}
+
+body{
+    width: 100%;
+     height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: #ff7a2d;
+}
+
+.gallery{
+    width: 80%;
+    height: 90vh;
+    max-width: 1600px;
+    max-height: 800px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+}
+
+.gallery__img{
+    width: 30%;
+    height: calc(50% -20px);
+    min-width: 300px;
+    min-height: 200px;
+    margin: 10px;
+    overflow: hidden;
+}
+
+.image{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: 1s;
+}
+
+
+.popup{
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50% ,-50%) scale(0);
+    opacity: 0;
+    max-width: 1600px;
+    width: 80%;
+    height: 90vh;
+    max-height: 800px;
+    border-radius: 20px;
+    background: rgba(0,0,0,0.75);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 5;
+    overflow: hidden;
+    transition: 1s;
+}
+
+.active{
+    transform: translate(-50% , -50%) scale(1);
+    opacity: 1;
+}
+
+.popup.active .image__name ,
+.popup.active .close-btn,
+.popup.active .index,
+.popup.active .large__popup__img ,
+.popup.active  .arrow-btn{
+    opacity: 1;
+    transition: opacity 0.5s;
+    transition-delay: 1s;
+}
+
+
+
+.popup__topbar{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 50px;
+    background: #000000;
+    color: white;
+    text-align: center;
+    line-height: 50px;
+    font-weight: 300;
+}
+
+.image__name{
+    opacity: 0;
+}
+
+
+.close-btn{
+    position: absolute;
+    top: 15px;
+    right: 15px;
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    background: red;
+    cursor: pointer;
+    opacity: 0;
+}
+
+.arrow-btn{
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    padding: 10px;
+    border-radius: 50%;
+    border:none;
+    background: none;
+    cursor: pointer;
+    color: white;
+    font-size: 1.6rem;
+}
+
+.arrow__left{
+    left: 10px;
+}
+
+.arrow__right{
+    right: 10px;
+    transform: translateY(-50%);
+}
+
+.arrow-btn:hover{
+    background: rgba(0,0,0,0.5);
+}
+
+.index{
+    position: absolute;
+    bottom: 10px;
+    right: 10px;
+    font-size: 2rem;
+    font-weight: 200;
+    color: rgba(255,255,255,0.4);
+}
+
+.large__popup__img{
+    margin-top: 5%;
+    width: 80%;
+    height: 80%;
+    object-fit: contain; 
+}
+
